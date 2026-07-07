@@ -1,5 +1,6 @@
 // Wrap code in a block scope to prevent global variable pollution
 {
+
     const catSprite = document.getElementById("cat-sprite");
     const dialogueText = document.getElementById("dialogue-text");
     const scene2 = document.getElementById("scene-2");
@@ -112,6 +113,9 @@
     observer.observe(scene2, { attributes: true, attributeFilter: ["class"] });
 
     function startScene2() {
+            // Inside your scene2.js initialization code
+        document.body.classList.add('scene-two');
+
         const name = window.currentUserName || localStorage.getItem("savedUserName") || "Human";
         
         if (name !== "Human") {

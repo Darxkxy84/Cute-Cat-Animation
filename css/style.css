@@ -461,9 +461,8 @@ body::after {
     object-fit: contain;
 }
 
-
 /* ==========================================================================
-   AI CAT CHAT INTERFACE - STYLES
+   AI CAT CHAT INTERFACE - STYLES (REMIXED RETRO EDITION)
    ========================================================================== */
 
 /* Bottom Left Main Entry Button */
@@ -534,9 +533,9 @@ body::after {
     linear-gradient(
         180deg,
         #050505 0%,
-        #111111 35%,
-        #1a1a1a 60%,
-        #070707 100%
+        #0d0d11 35%,
+        #141419 60%,
+        #050505 100%
     );
 
     z-index:-1;
@@ -548,86 +547,107 @@ body::after {
     top: 0; left: 0; width: 100%; height: 100%;
     opacity: 0.04;
     pointer-events: none;
-    /* Clean high-density analog monochromatic grain configuration */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3联%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* Active Layout Layout Grid Wrapper */
 .chat-layout-wrapper {
     position: relative;
     width: 90%;
-    max-width: 680px;
-    height: 80vh;
+    max-width: 640px;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
 
-/* Standalone Pixel Exit Button */
+/* Standalone Pixel Exit Button - Re-positioned & Styled */
 .chat-exit-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: -45px;
+    right: 0;
     background: #e63946;
     color: #ffffff;
-    border: 2px solid #ffffff;
-    padding: 8px 16px;
+    border: 3px solid #000000;
+    padding: 8px 18px;
     font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 3px 3px 0px #000000;
-    z-index: 10;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
+    box-shadow: 4px 4px 0px #000000;
+    z-index: 110;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: transform 0.1s ease, background 0.2s ease;
 }
 
-/* Center Stage Viewport for the Chatting Cat */
+.chat-exit-btn:hover {
+    background: #ff4d5a;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.chat-exit-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000000;
+}
+
+/* Center Stage Viewport for the Chatting Cat - Resized Cleanly */
 .chat-active-display {
-    margin-bottom: 20px;
-    transform: scale(0.85);
+    margin-bottom: 10px;
+    transform: scale(0.55);
     image-rendering: pixelated;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
     animation: catFloat 4s ease-in-out infinite;
 }
+
 @keyframes catFloat {
-    0%, 100% { transform: translateY(0) scale(1.15); }
-    50% { transform: translateY(-10px) scale(1.15); }
+    0%, 100% { transform: translateY(0) scale(0.55); }
+    50% { transform: translateY(-8px) scale(0.55); }
 }
 
-/* PREMIUM MULTI-LAYERED GLASSMORPHIC CARD STACK WITH SHINY BORDERS */
+/* HIGH-CONTRAST NEON CYBER GLASSMORPHIC CARD STACK WITH GLOW BORDERS */
 .glass-chat-card-outer {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 480px; /* Locked down fixed height to stop expanding bugs */
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 2px solid rgba(184, 192, 255, 0.25); /* High contrast popup border */
     border-radius: 16px;
-    padding: 4px; /* Creates spacing layer for deep pixel effect */
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 
-                inset 0 1px 0px rgba(255, 255, 255, 0.2);
+    padding: 6px; 
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85), 
+                0 0 30px rgba(184, 192, 255, 0.1); /* Ambient pop glow */
 }
 
 .glass-chat-card-inner {
     width: 100%;
-    background: rgba(18, 18, 18, 0.65);
+    height: 100%; /* Rigidly follow parent layout constraints */
+    background: rgba(13, 13, 17, 0.9); /* Darker palette fill for separation from bg */
     border-radius: 12px;
-    border: 2px solid #000000; /* Outer black line frame */
-    padding: 20px;
+    border: 3px solid #000000; 
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
 }
 
-/* Scrollable Inner Dialog Feed Viewport Window */
+/* Scrollable Inner Dialog Feed Viewport Window - Fixed extension and added fade masks */
 .chat-message-viewport {
     flex-grow: 1;
-    height: 260px;
+    height: calc(100% - 65px); /* Forces viewport constraint inside container */
     overflow-y: auto;
-    margin-bottom: 20px;
-    padding-right: 8px;
+    margin-bottom: 15px;
+    padding: 12px 10px 12px 2px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    scroll-behavior: smooth;
+    
+    /* Elegant edge-fading masks for Instagram/WhatsApp viewport boundary effect */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 /* Customized Minimal Scrollbar */
@@ -635,46 +655,53 @@ body::after {
     width: 6px;
 }
 .chat-message-viewport::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
 .chat-message-viewport::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(184, 192, 255, 0.4);
     border-radius: 4px;
 }
 
-/* Dialog Text Speech Bubbles Layout styling */
+/* Dialog Text Speech Bubbles Layout styling - Retro Game Remake */
 .ai-bubble, .user-bubble {
-    max-width: 85%;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 0.95rem;
+    max-width: 82%;
+    padding: 12px 16px;
+    font-size: 0.92rem;
     line-height: 1.4;
     word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace; /* Hardcore arcade typeface feel */
+    border: 3px solid #000000;
+    border-radius: 0px; /* Sharp 8-bit corners */
 }
 
 .ai-bubble {
     align-self: flex-start;
-    background: rgba(255, 255, 255, 0.08);
-    color: #e0e0e0;
-    border-left: 3px solid #b8c0ff;
+    background: #9d4edd; /* Rich retro arcade purple */
+    color: #ffffff;
+    box-shadow: 4px 4px 0px #000000;
+    border-left: 3px solid #000000; /* Overrode the boring default border */
 }
 
 .user-bubble {
     align-self: flex-end;
-    background: rgba(255, 255, 255, 0.9);
-    color: #121212;
+    background: #ccff33; /* Neon chartreuse game pop accent */
+    color: #000000;
+    font-weight: bold;
+    box-shadow: -4px 4px 0px #000000;
     border-right: 3px solid #000000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .system-bubble {
-    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     font-size: 0.85rem;
-    color: #888888;
+    color: #ffb703; /* Retro notification gold */
     border: none;
     align-self: center;
     background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Chat Engine Text Input Layout Elements */
@@ -686,11 +713,11 @@ body::after {
 
 .input-wrapper-pixel {
     flex-grow: 1;
-    background: rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 3px solid #000000;
+    border-radius: 0px; /* Kept blocky retro styling consistent */
     padding: 2px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
 }
 
 .input-wrapper-pixel input {
@@ -699,13 +726,13 @@ body::after {
     border: none;
     outline: none;
     color: #ffffff;
-    font-family: inherit;
+    font-family: 'Courier New', Courier, monospace;
     padding: 10px 14px;
     font-size: 0.95rem;
 }
 
 .input-wrapper-pixel input::placeholder {
-    color: #666666;
+    color: #555555;
 }
 
 /* Action Control System Deck (Microphone & Send Circle Buttons) */
@@ -720,7 +747,7 @@ body::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid #ffffff;
+    border: 3px solid #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -730,28 +757,30 @@ body::after {
 }
 
 .mic-btn {
-    background: rgba(255, 255, 255, 0.07);
+    background: #24242e;
     color: #ffffff;
+    box-shadow: 2px 2px 0px #000000;
 }
 
 .mic-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #3a3a4a;
     color: #ff4d6d;
-    border-color: #ff4d6d;
+    border-color: #000000;
+    transform: scale(1.05);
 }
 
 /* Active Voice Input Mode Pulse Ring Glow Effect */
 .mic-btn.recording-active {
     background: #ff4d6d !important;
     color: #ffffff !important;
-    border-color: #ffffff !important;
+    border-color: #000000 !important;
 }
 
 .mic-pulse-ring {
     display: none;
     position: absolute;
-    top: -4px; left: -4px; right: -4px; bottom: -4px;
-    border: 2px solid #ff4d6d;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border: 3px solid #ff4d6d;
     border-radius: 50%;
     animation: micPulse 1.4s infinite linear;
 }
@@ -762,19 +791,19 @@ body::after {
 
 @keyframes micPulse {
     0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.3); opacity: 0; }
+    100% { transform: scale(1.35); opacity: 0; }
 }
 
 .send-btn {
     background: #ffffff;
     color: #121212;
-    box-shadow: 0 4px 12px rgba(255,255,255,0.25);
+    box-shadow: 2px 2px 0px #000000;
 }
 
 .send-btn:hover {
     transform: scale(1.08);
-    background: #e0e0e0;
-    box-shadow: 0 6px 16px rgba(255,255,255,0.4);
+    background: #ccff33; /* Shifts color nicely to match bubble highlights on hover */
+    box-shadow: 3px 3px 0px #000000;
 }
 
 .send-btn:active {
@@ -788,19 +817,7 @@ body::after {
     pointer-events: none !important;
 }
 
-
-.glass-chat-card-outer {
-    min-height: 420px;
-}
-
-.glass-chat-card-inner {
-    min-height: 420px;
-}
-
-.chat-message-viewport {
-    flex: 1;
-}
-
+    
 .icon-wrapper {
     position: fixed;
     top: 24px;
@@ -869,4 +886,33 @@ body::after {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* ==========================================
+   Scene 2 Overrides (White Background Theme)
+   ========================================== */
+
+/* Adjust the 'i' button for a light background */
+.scene-two .icon-btn {
+    border-color: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.04);
+    color: #1c1c1e; /* Dark gray/black for the 'i' text */
+}
+
+.scene-two .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* Adjust the info box text gradient for a light background */
+.scene-two .icon-box {
+    /* Optional: If you want the pop-up box background to be light too */
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+
+    /* Dark gradient text so it's fully visible on the light background */
+    background-image: linear-gradient(135deg, #1a1a1c, #4a4a4a 50%, #2c2c2e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
