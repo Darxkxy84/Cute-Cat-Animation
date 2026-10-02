@@ -25,8 +25,7 @@
         exactWordWeight: 1,
         stemWeight: 0.55,
         densityWeight: 1.8,
-        recentReplyPenalty: 4,
-        randomizeReplies: true
+        recentReplyPenalty: 4
     };
 
     // Common words are useful for language but poor topic signals.
